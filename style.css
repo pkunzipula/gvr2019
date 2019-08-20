@@ -1,0 +1,220 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+}
+body {
+  background: silver;
+  font-family: "Fira Sans Extra Condensed";
+}
+img {
+	height: auto;
+	max-width: 100%;
+}
+.topbar {
+  align-items: center;
+  background: white;
+  display: flex;
+  font-size: 15px;
+  height: 34px;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 2000px;
+}
+.topbar > div {
+  margin: 0 15px;
+}
+.logonav {
+  align-items: center;
+  background: #111;
+  border-bottom: 1px solid white;
+  display: flex;
+  height: 52px;
+  margin: 0 auto;
+  max-width: 2000px;
+  position: relative;
+}
+.logo {
+  height: 85px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 235px;
+}
+.logo img {
+  position: relative;
+}
+.big-logo {
+  height: 85px;
+  position: absolute;
+  width: 230px;
+}
+.big-logo::after {
+  background: rgba(0, 0, 0, 0.5);
+  content: "";
+  height: 90px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  transform: skew(-19deg);
+  width: 248px;
+  z-index: 1;
+}
+.big-logo::before {
+  background: white;
+  content: "";
+  height: 85px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  transform: skew(-19deg);
+  width: 245px;
+  z-index: 2;
+}
+.big-logo img {
+  z-index: 3;
+}
+.lil-logo {
+  height: 52px;
+  position: absolute;
+  width: 150px;
+}
+.lil-logo::after {
+  background: rgba(0, 0, 0, 0.5);
+  content: "";
+  height: 55px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  transform: skew(-19deg);
+  width: 159px;
+  z-index: 11;
+}
+.lil-logo::before {
+  background: white;
+  content: "";
+  height: 52px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  transform: skew(-19deg);
+  width: 160px;
+  z-index: 12;
+}
+.lil-logo img {
+  z-index: 13;
+}
+.big-logo {
+  transform: translateX(-150%);
+  transition: 0.2s;
+}
+.big-time .big-logo {
+  transform: translateX(0);
+  transition-delay: 0.2s;
+}
+.big-time .lil-logo {
+  transform: translateX(-150%);
+  transition: 0.2s;
+}
+.lil-logo {
+  transform: translateX(0);
+  transition: 0.2s;
+  transition-delay: 0.2s;
+}
+nav {
+  display: flex;
+  height: 52px;
+  margin-left: 200px;
+  margin-right: auto;
+  position: relative;
+  transition: 0.2s;
+  transition-delay: 0.2s;
+  z-index: 100;
+}
+
+nav a {
+  align-self: stretch;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-right: 12px;
+  padding: 0 6px;
+  text-decoration: none;
+}
+nav a:hover {
+  color: #ffac31;
+  /* color: #febd69; */
+}
+nav a::after {
+  color: white;
+  content: "•";
+  position: absolute;
+  right: -8px;
+}
+nav a:last-child {
+  margin-right: 0;
+}
+nav a:last-child::after {
+  content: none;
+}
+.big-time + nav {
+  transform: translateX(90px);
+  transition: 0.2s;
+  transition-delay: 0.2s;
+}
+.search {
+  align-items: center;
+  border-left: 1px solid white;
+  color: white;
+  display: flex;
+  height: 52px;
+  justify-content: center;
+  width: 52px;
+}
+.search:hover {
+  color: #ffac31;
+}
+button {
+  position: absolute;
+  top: 50vh;
+  left: 50vh;
+  padding: 40px;
+}
+
+@media screen and (min-width: 1280px) {
+  .big-logo {
+      transform: translate3d(0,0,0);
+      transition-delay: 0.2s;
+    }
+  }
+  .lil-logo {
+    transform: translate3d(-150%,0,0);
+    transition: 0.2s;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .big-time .big-logo {
+    transform: translate3d(-150%,0,0);
+    transition: 0.2s transform;
+  }
+  .big-time .lil-logo {
+    transform: translate3d(0,0,0);
+    transition: 0.2s transform;
+    transition-delay: 0.2s;
+  }
+  .logo.big-time + .header-nav {
+    transform: translate3d(0, 0, 0);
+    transition-delay: 0.2s;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .top-nav > li > a span {
+    position: static;
+    overflow: visible;
+    clip: auto;
+  }
+}
