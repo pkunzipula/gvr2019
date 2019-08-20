@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Fira+Sans+Extra+Condensed:400,500,600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        line-height: 1;
+      }
+      body {
+        background: silver;
+        font-family: "Fira Sans Extra Condensed";
+      }
+      .topbar {
+        align-items: center;
+        background: white;
+        display: flex;
+        font-size: 15px;
+        height: 34px;
+        justify-content: space-between;
+        margin: 0 auto;
+        max-width: 2000px;
+      }
+      .topbar > div {
+        margin: 0 15px;
+      }
+      .logonav {
+        align-items: center;
+        /* background: #111; */
+        background: #131a22;
+        display: flex;
+        height: 52px;
+        margin: 0 auto;
+        max-width: 2000px;
+        position: relative;
+      }
+      .logonav a {
+        color: white;
+        text-decoration: none;
+      }
+      .logo {
+        height: 85px;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 235px;
+      }
+      .logo img {
+        display: block;
+        height: 100%;
+        position: relative;
+        width: 100%;
+      }
+      .biglogo {
+        height: 85px;
+        position: absolute;
+        width: 230px;
+      }
+      .biglogo::after {
+        background: rgba(0, 0, 0, 0.5);
+        content: "";
+        height: 90px;
+        left: 0;
+        position: absolute;
+        top: 0;
+        transform: skew(-19deg);
+        width: 248px;
+        z-index: 1;
+      }
+      .biglogo::before {
+        background: white;
+        content: "";
+        height: 85px;
+        left: 0;
+        position: absolute;
+        top: 0;
+        transform: skew(-19deg);
+        width: 245px;
+        z-index: 2;
+      }
+      .biglogo img {
+        z-index: 3;
+      }
+      .lillogo {
+        height: 52px;
+        position: absolute;
+        width: 150px;
+      }
+      .lillogo::after {
+        background: rgba(0, 0, 0, 0.5);
+        content: "";
+        height: 55px;
+        left: 0;
+        position: absolute;
+        top: 0;
+        transform: skew(-19deg);
+        width: 159px;
+        z-index: 11;
+      }
+      .lillogo::before {
+        background: white;
+        content: "";
+        height: 52px;
+        left: 0;
+        position: absolute;
+        top: 0;
+        transform: skew(-19deg);
+        width: 160px;
+        z-index: 12;
+      }
+      .lillogo img {
+        z-index: 13;
+      }
+      .biglogo {
+        transform: translateX(-150%);
+        transition: 0.2s;
+      }
+      .bigtime .biglogo {
+        transform: translateX(0);
+        transition-delay: 0.2s;
+      }
+      .bigtime .lillogo {
+        transform: translateX(-150%);
+        transition: 0.2s;
+      }
+      .lillogo {
+        transform: translateX(0);
+        transition: 0.2s;
+        transition-delay: 0.2s;
+      }
+      nav {
+        margin-left: 200px;
+        margin-right: auto;
+        position: relative;
+        transition: 0.2s;
+        transition-delay: 0.2s;
+        z-index: 100;
+      }
+      .bigtime + nav {
+        transform: translateX(90px);
+        transition: 0.2s;
+        transition-delay: 0.2s;
+      }
+      nav a {
+        position: relative;
+        margin-right: 23px;
+      }
+      nav a:hover {
+        color: #ffac31;
+        /* color: #febd69; */
+      }
+      nav a::after {
+        content: "•";
+        position: absolute;
+        right: -15px;
+      }
+      nav a:last-child::after {
+        content: none;
+      }
+      .search {
+        align-items: center;
+        border-left: 1px solid white;
+        color: white;
+        display: flex;
+        height: 52px;
+        justify-content: center;
+        width: 52px;
+      }
+      .search:hover {
+        color: #ffac31;
+      }
+      button {
+        position: absolute;
+        top: 50vh;
+        left: 50vh;
+        padding: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="topbar">
+        <div>
+          Open Mon-Fri 11a-7p ~ Sat-Sun 8a-7p &bull; Renting daily 11:30a -
+          5:30p
+        </div>
+        <div>175 Cassia Way ~ Henderson, NV 89014 &bull; 702-979-9494</div>
+      </div>
+      <div class="logonav">
+        <div id="logo" class="logo">
+          <div class="biglogo">
+            <img src="images/bigGVR@2x.png" />
+          </div>
+          <div class="lillogo">
+            <img src="images/lilGVR@2x.png" />
+          </div>
+        </div>
+        <nav>
+          <a href="#">Home</a>
+          <a href="#">Shoot Something</a>
+          <a href="#">Buy Something</a>
+          <a href="#">Learn Something</a>
+          <a href="#">Services</a>
+          <a href="#">Calendar</a>
+          <a href="#">Contact Us</a>
+        </nav>
+        <div class="search">Search</div>
+      </div>
+    </header>
+    <button onclick="goNow()">Toggle Logo</button>
+    <script>
+      function goNow() {
+        let logo = document.getElementById("logo");
+        logo.classList.toggle("bigtime");
+      }
+    </script>
+  </body>
+</html>
