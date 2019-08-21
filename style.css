@@ -9,6 +9,7 @@ body {
   font-family: "Fira Sans Extra Condensed";
 }
 img {
+  display: block;
 	height: auto;
 	max-width: 100%;
 }
@@ -36,11 +37,12 @@ img {
   position: relative;
 }
 .logo {
-  height: 85px;
+  height: 55px;
   left: 0;
   position: absolute;
   top: 0;
-  width: 235px;
+  width: 265px;
+  clip: rect(auto, auto, 90px, auto);
 }
 .logo img {
   position: relative;
@@ -105,7 +107,18 @@ img {
 .lil-logo img {
   z-index: 13;
 }
-.big-logo {
+.logo .big-logo,
+.logo.big-time .lil-logo {
+  transform: translate3d(-150%, 0, 0);
+  transition: 0.2s transform;
+}
+.logo .lil-logo,
+.logo.big-time .big-logo {
+  transform: translate3d(0, 0, 0);
+  transition: 0.2s transform;
+  transition-delay: 0.2s;
+}
+/* .big-logo {
   transform: translateX(-150%);
   transition: 0.2s;
 }
@@ -121,7 +134,7 @@ img {
   transform: translateX(0);
   transition: 0.2s;
   transition-delay: 0.2s;
-}
+} */
 nav {
   display: flex;
   height: 52px;
@@ -184,19 +197,8 @@ button {
   padding: 40px;
 }
 
-@media screen and (min-width: 1280px) {
-  .big-logo {
-      transform: translate3d(0,0,0);
-      transition-delay: 0.2s;
-    }
-  }
-  .lil-logo {
-    transform: translate3d(-150%,0,0);
-    transition: 0.2s;
-  }
-}
 
-@media screen and (min-width: 1280px) {
+/* @media screen and (min-width: 1280px) {
   .big-time .big-logo {
     transform: translate3d(-150%,0,0);
     transition: 0.2s transform;
@@ -209,6 +211,22 @@ button {
   .logo.big-time + .header-nav {
     transform: translate3d(0, 0, 0);
     transition-delay: 0.2s;
+  } */
+
+  @media screen and (max-width: 1279px) {
+    .logo.big-time .big-logo {
+      transform: translate3d(-150%, 0, 0);
+      transition: 0.2s transform;
+    }
+    .logo.big-time .lil-logo {
+      transform: translate3d(0, 0, 0);
+      transition: 0.2s transform;
+      transition-delay: 0.2s;
+    }
+    .logo.big-time + .header-nav {
+      transform: translate3d(0, 0, 0);
+      transition-delay: 0.2s;
+    }
   }
 }
 @media screen and (min-width: 1280px) {
