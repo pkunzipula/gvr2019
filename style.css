@@ -10,103 +10,96 @@ body {
 }
 img {
   display: block;
-	height: auto;
-	max-width: 100%;
+  height: auto;
+  max-width: 100%;
 }
-.topbar {
+
+.hourbar {
   align-items: center;
-  background: white;
+  background-color: white;
   display: flex;
-  font-size: 15px;
   height: 34px;
   justify-content: space-between;
   margin: 0 auto;
-  max-width: 2000px;
+  max-width: 1400px;
+  padding: 0 20px;
 }
-.topbar > div {
-  margin: 0 15px;
-}
-.logonav {
+
+.navbar {
   align-items: center;
-  background: #111;
-  border-bottom: 1px solid white;
+  background-color: rgba(0, 0, 0, 0.7);
   display: flex;
   height: 52px;
+  justify-content: space-between;
   margin: 0 auto;
-  max-width: 2000px;
+  max-width: 1400px;
   position: relative;
 }
+
 .logo {
-  height: 55px;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 265px;
-  clip: rect(auto, auto, 90px, auto);
-}
-.logo img {
-  position: relative;
-}
-.big-logo {
-  height: 85px;
-  position: absolute;
-  width: 230px;
-}
-.big-logo::after {
-  background: rgba(0, 0, 0, 0.5);
-  content: "";
+  clip: rect(0 265px 90px 0);
+  /* clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); */
   height: 90px;
   left: 0;
   position: absolute;
   top: 0;
-  transform: skew(-19deg);
-  width: 248px;
-  z-index: 1;
+  width: 265px;
 }
-.big-logo::before {
-  background: white;
-  content: "";
-  height: 85px;
-  left: 0;
+
+.big-logo,
+.lil-logo {
   position: absolute;
-  top: 0;
-  transform: skew(-19deg);
-  width: 245px;
-  z-index: 2;
 }
-.big-logo img {
-  z-index: 3;
+
+.big-logo img,
+.lil-logo img {
+  position: relative;
+  z-index: 19;
 }
+
+.big-logo {
+  height: 85px;
+  width: 230px;
+}
+
 .lil-logo {
   height: 52px;
-  position: absolute;
   width: 150px;
 }
-.lil-logo::after {
-  background: rgba(0, 0, 0, 0.5);
+
+.big-logo:before,
+.lil-logo:before {
+  background-color: white;
   content: "";
-  height: 55px;
-  left: 0;
+  height: 100%;
+  left: calc(100% - 40px);
   position: absolute;
   top: 0;
   transform: skew(-19deg);
-  width: 159px;
-  z-index: 11;
+  transform-origin: bottom right;
+  width: 40px;
+  z-index: 10;
 }
-.lil-logo::before {
-  background: white;
+
+.big-logo:after,
+.lil-logo:after {
+  background-color: rgba(0, 0, 0, 0.5);
   content: "";
-  height: 52px;
-  left: 0;
+  height: 90px;
+  left: -3px;
   position: absolute;
   top: 0;
   transform: skew(-19deg);
-  width: 160px;
-  z-index: 12;
+  transform-origin: bottom right;
+  width: calc(100% + 5px);
+  z-index: 9;
 }
-.lil-logo img {
-  z-index: 13;
+
+.lil-logo:after {
+  height: 56px;
+  width: 100%;
 }
+
 .logo .big-logo,
 .logo.big-time .lil-logo {
   transform: translate3d(-150%, 0, 0);
@@ -197,6 +190,9 @@ button {
   padding: 40px;
 }
 
+nav {
+  display: none;
+}
 
 /* @media screen and (min-width: 1280px) {
   .big-time .big-logo {
@@ -213,20 +209,19 @@ button {
     transition-delay: 0.2s;
   } */
 
-  @media screen and (max-width: 1279px) {
-    .logo.big-time .big-logo {
-      transform: translate3d(-150%, 0, 0);
-      transition: 0.2s transform;
-    }
-    .logo.big-time .lil-logo {
-      transform: translate3d(0, 0, 0);
-      transition: 0.2s transform;
-      transition-delay: 0.2s;
-    }
-    .logo.big-time + .header-nav {
-      transform: translate3d(0, 0, 0);
-      transition-delay: 0.2s;
-    }
+@media screen and (max-width: 1279px) {
+  .logo.big-time .big-logo {
+    transform: translate3d(-150%, 0, 0);
+    transition: 0.2s transform;
+  }
+  .logo.big-time .lil-logo {
+    transform: translate3d(0, 0, 0);
+    transition: 0.2s transform;
+    transition-delay: 0.2s;
+  }
+  .logo.big-time + .header-nav {
+    transform: translate3d(0, 0, 0);
+    transition-delay: 0.2s;
   }
 }
 @media screen and (min-width: 1280px) {

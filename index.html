@@ -1,53 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Fira+Sans+Extra+Condensed:400,500,600&display=swap"
+      rel="stylesheet"
+    />
+    <link href="style.css" rel="stylesheet" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>Document</title>
-  <link href="https://fonts.googleapis.com/css?family=Fira+Sans+Extra+Condensed:400,500,600&display=swap"
-    rel="stylesheet" />
-  <link href="style.css" rel="stylesheet" />
-</head>
-
-<body>
-  <header>
-    <div class="topbar">
-      <div>
-        Open Mon-Fri 11a-7p ~ Sat-Sun 8a-7p &bull; Renting daily 11:30a -
-        5:30p
-      </div>
-      <div>175 Cassia Way ~ Henderson, NV 89014 &bull; 702-979-9494</div>
-    </div>
-    <div class="logonav">
-      <div id="logo" class="logo">
-        <div class="big-logo">
-          <a href="index.html"><img src="images/bigGVR@2x.png" /></a>
+  <body>
+    <header>
+      <div class="hourbar">
+        <div>
+          <b>Open</b> Mon-Fri 11a-7p &bull; Sat-Sun 8a-7p |
+          <b>Renting daily</b> 11:30a - 5:30p
         </div>
-        <div class="lil-logo">
-          <img src="images/lilGVR@2x.png" />
-        </div>
+        <div>175 Cassia Way &bull; Henderson, NV 89014 | 702-979-9494</div>
       </div>
-      <nav class="header-nav">
-        <a href="#">Home</a>
-        <a href="#">Shoot Something</a>
-        <a href="#">Buy Something</a>
-        <a href="#">Learn Something</a>
-        <a href="#">Services</a>
-        <a href="#">Calendar</a>
-        <a href="#">Contact Us</a>
-      </nav>
-      <div class="search">Search</div>
-    </div>
-  </header>
-  <button onclick="goNow()">Toggle Logo</button>
-  <script>
-    function goNow() {
-      let logo = document.getElementById("logo");
-      logo.classList.toggle("big-time");
-    }
-  </script>
-</body>
-
+      <div class="navbar">
+        <div id="js-logo" class="logo">
+          <div class="big-logo">
+            <a href="index.html"><img src="images/bigGVR@2x.png"/></a>
+          </div>
+          <div class="lil-logo">
+            <a href="index.html"><img src="images/lilGVR@2x.png"/></a>
+          </div>
+        </div>
+        <nav>
+          <ul class="header-nav">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Shoot Something</a></li>
+            <li><a href="#">Buy Something</a></li>
+            <li><a href="#">Learn Something</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Calendar</a></li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
+        </nav>
+        <div class="search">Search</div>
+      </div>
+    </header>
+    <button onclick="goNow()">Toggle Logo</button>
+    <script>
+      function goNow() {
+        let logo = document.getElementById("js-logo");
+        logo.classList.toggle("big-time");
+      }
+    </script>
+  </body>
 </html>
